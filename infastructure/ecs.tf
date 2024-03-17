@@ -43,8 +43,8 @@ resource "aws_ecs_task_definition" "task_definition" {
       memory = 2048
       portMappings = [
         {
-          container_port = 8890
-          host_port      = 8890
+          containerPort = 8890
+          hostPort      = 8890
         }
       ],
       logConfiguration = {
