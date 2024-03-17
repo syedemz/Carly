@@ -85,8 +85,4 @@ resource "aws_ecs_service" "service" {
     container_name   = "flask-api-container"
     container_port   = 8890
   }
-
-  depends_on = [
-    aws_alb_listener.listener
-  ]
 }
