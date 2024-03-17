@@ -41,11 +41,10 @@ resource "aws_ecs_task_definition" "task_definition" {
       image  = var.image_id
       cpu    = 1024
       memory = 2048
-      port_mappings = [
+      portMappings = [
         {
           container_port = 8890
           host_port      = 8890
-          protocol       = "tcp"
         }
       ],
       logConfiguration = {
