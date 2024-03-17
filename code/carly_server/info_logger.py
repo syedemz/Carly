@@ -12,6 +12,8 @@ def global_logger(logtype: str, alertlevel: str, logmessage:str) -> NoReturn:
 
     Args:
         logtype (str): _description_
+        alertlevel (str): _description_
+        logmessage (str): _description_
 
     Returns:
         NoReturn: _description_
