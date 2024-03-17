@@ -6,7 +6,7 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 8890
 
 ENV PYTHONUNBUFFERED=1
 

@@ -3,7 +3,7 @@ from info_logger import dynamo_fetch_record, global_logger
 from authorizer import generate_token
 
 
-dynamodb = boto3.client('dynamodb')
+dynamodb = boto3.client('dynamodb', region_name='eu-central-1')
 table_name = 'carly_customer_info'
 index_name = 'email-index'
 

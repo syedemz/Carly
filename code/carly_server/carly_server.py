@@ -94,4 +94,4 @@ def change_language():
         return jsonify({"error": "language updated failed, Please check credentials"}), 400
 
 if __name__ == '__main__':
-   app.run()
+    app.run(host='0.0.0.0',debug=True,port='8890')
