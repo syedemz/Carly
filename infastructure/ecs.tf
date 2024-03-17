@@ -47,7 +47,15 @@ resource "aws_ecs_task_definition" "task_definition" {
           host_port      = 8890
           protocol       = "tcp"
         }
-      ]
+      ],
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = "carly-backend"
+          awslogs-region        = "eu-central-1"
+          awslogs-stream-prefix = "ecs"
+        }
+      }
     }
   ])
 

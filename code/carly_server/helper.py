@@ -84,10 +84,13 @@ def execute_login(email: str, password: str) -> object:
         _type_: _description_
     """
     record = fetch_record(email)
- 
-    if email == record['email']['S'] and password == record['password']['S']:
-        token = generate_token(email)
-        return {"customer_id": record['customer_id']['S'], "language": record['language']['S'], "token":token}
+    print(record)
+    try:
+        if email == record['email']['S'] and password == record['password']['S']:
+            token = generate_token(email)
+            return {"customer_id": record['customer_id']['S'], "language": record['language']['S'], "token":token}
+    except KeyError as e:
+        global_logger('Server Error', 'error',  f"Retrieved record seems to have missing information: {str(e)}")
     return None
 
 

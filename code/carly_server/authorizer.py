@@ -61,6 +61,14 @@ def generate_token(email: str) -> str:
 
 # Decorator function to validate JWT token
 def token_required(func):
+    """_summary_
+
+    Args:
+        func (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     @wraps(func)
     def validate_token(*args, **kwargs):
         token = request.headers.get('Authorization')
@@ -85,6 +93,14 @@ def token_required(func):
 
 
 def require_version(func):
+    """_summary_
+
+    Args:
+        func (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     @wraps(func)
     def validate_version(*args, **kwargs):
         version = request.headers.get('version')

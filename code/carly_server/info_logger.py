@@ -23,7 +23,15 @@ def global_logger(logtype: str, alertlevel: str, logmessage:str) -> NoReturn:
     
 
 
-def dynamo_fetch_record(func):
+def dynamo_fetch_record(func) -> NoReturn:
+    """_summary_
+
+    Args:
+        func (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     @wraps(func)  # Preserves function metadata
     def wrapper_fetch_record(*args, **kwargs) -> object:
         try:
@@ -34,4 +42,6 @@ def dynamo_fetch_record(func):
             # Log the error
             global_logger('Server Error', 'error', f"Error fetching / updating record: {str(e)}")
             return None
+        except KeyError as e:
+            global_logger('Server Error', 'error',  f"Retrieved record seems to be invalid or have missing information: {str(e)}")
     return wrapper_fetch_record
