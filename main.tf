@@ -1,10 +1,10 @@
 module "Backend" {
   source                    = "./infastructure"
-  vpc_id                    = "vpc-00f3eb91a621f7879"
+  vpc_id                    = "vpc-0cca3ec5c581a48c3"
   cluster_name              = "carly-backend-cluster"
   cluster_service_name      = "carly-api-service"
   cluster_service_task_name = "carly-api-task"
-  vpc_id_subnet_list        = ["subnet-06b3f30bed04c4cd8", "subnet-0bf7bf07fbf8a2d71", "subnet-0fe50deefaa6c78a8", "subnet-0b31081c793b01a76"]
+  vpc_id_subnet_list        = ["subnet-0aa166b83ffd781d9", "subnet-0b8384cf618552502", "subnet-0cfac769babe2908d"]
   execution_role_arn        = "arn:aws:iam::929860961607:role/carly-ecs-role"
   image_id                  = "929860961607.dkr.ecr.eu-central-1.amazonaws.com/carly-backend:latest"
 }
