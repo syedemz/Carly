@@ -79,4 +79,14 @@ resource "aws_ecs_service" "service" {
     security_groups  = [aws_security_group.ecs_sg.id]
     assign_public_ip = true
   }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.server_target_group.arn
+    container_name   = "flask-api-container"
+    container_port   = 8890
+  }
+
+  depends_on = [
+    aws_alb_listener.listener
+  ]
 }
