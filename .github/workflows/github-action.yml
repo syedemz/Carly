@@ -39,10 +39,6 @@ jobs:
         run: terraform fmt -check
         continue-on-error: true
 
-      - name: change directory
-        id: cdtf
-        run: cd infastructure
-
       - name: Terraform Init
         id: init
         env:
