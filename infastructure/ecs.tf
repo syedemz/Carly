@@ -31,8 +31,6 @@ resource "aws_ecs_task_definition" "task_definition" {
   requires_compatibilities = ["FARGATE"]
 
 
-  execution_role_arn = var.execution_role_arn
-
 
   container_definitions = jsonencode([
     {
