@@ -58,7 +58,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     }
   ])
 
-  cpu = "2048 "
+  cpu = 2048
 }
 
 
