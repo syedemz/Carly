@@ -1,7 +1,7 @@
-from code.carly_server import carly_server
+import sys
+sys.path.append("..")
+from crlyserver import app as flask_app
 import pytest
-
-flask_app = carly_server.app
 
 @pytest.fixture
 def app():

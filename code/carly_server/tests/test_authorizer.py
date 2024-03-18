@@ -1,4 +1,6 @@
-from code.carly_server.authorizer import check_client_version, generate_token
+import sys
+sys.path.append("..")
+from authorizer import check_client_version, generate_token
 import pytest
 import jwt
 import datetime

@@ -10,4 +10,4 @@ EXPOSE 8890
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["python" ,"./code/carly_server/carly_server.py"]
+CMD ["python" ,"./code/carly_server/crlyserver.py"]

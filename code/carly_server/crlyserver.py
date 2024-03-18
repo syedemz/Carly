@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
-from .helper import execute_login, execute_change_password, execute_change_language
-from .authorizer import token_required, require_version
+from helper import execute_login, execute_change_password, execute_change_language
+from authorizer import token_required, require_version
+import sys
 
 
 app = Flask(__name__)
-
 
 
 @app.route('/login', methods=['POST'])

@@ -1,6 +1,7 @@
+from info_logger import dynamo_fetch_record, global_logger
+from authorizer import generate_token
 import boto3
-from .info_logger import dynamo_fetch_record, global_logger
-from .authorizer import generate_token
+
 
 
 dynamodb = boto3.client('dynamodb', region_name='eu-central-1')

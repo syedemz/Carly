@@ -27,7 +27,7 @@ resource "aws_security_group" "ecs_sg" {
 resource "aws_ecs_task_definition" "task_definition" {
   family                   = var.cluster_service_task_name
   network_mode             = "awsvpc"
-  memory                   = "2048"
+  memory                   = 15000
   requires_compatibilities = ["FARGATE"]
 
 
@@ -39,8 +39,8 @@ resource "aws_ecs_task_definition" "task_definition" {
     {
       name   = "flask-api-container"
       image  = var.image_id
-      cpu    = 1024
-      memory = 2048
+      cpu    = 2048
+      memory = 4500
       portMappings = [
         {
           containerPort = 8890
@@ -58,7 +58,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     }
   ])
 
-  cpu = "1024"
+  cpu = 4096
 }
 
 
@@ -70,7 +70,7 @@ resource "aws_ecs_service" "service" {
   name            = var.cluster_service_name
   cluster         = aws_ecs_cluster.ecs_cluster.id
   task_definition = aws_ecs_task_definition.task_definition.arn
-  desired_count   = 1
+  desired_count   = 3
   launch_type     = "FARGATE"
 
   network_configuration {

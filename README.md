@@ -5,7 +5,7 @@ The code/carly_server folder contains all the python files including the flask s
 The code/infastructure folder contains all the terraform files for AWS infastructure deployment
 The code/tests contains all the unit test files
 
-Github Actions: The repository is configured with github actions, the associated yml file can be found in the .github/workflows folder, as soon as a push is made to the main branch of this repo, or a Pull Request is merged with the main branch, this triggers a CICD pipeline which installs dependencies, runs unit tests, builds a docker image and uploads it into an AWS ECR repository. All of these steps can be investigated in the aforementioned yml file
+Github Actions: The repository is configured with github actions, the associated yml file can be found in the .github/workflows folder, as soon as a push is made to the main branch of this repo, or a Pull Request is merged with the main branch, this triggers a CICD pipeline which installs dependencies, builds a docker image and uploads it into an AWS ECR repository. All of these steps can be investigated in the aforementioned yml file
 
 Terraform: Github actions then initiates the terraform environment and the infastructure is deployed to AWS.
 

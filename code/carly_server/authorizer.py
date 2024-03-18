@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from functools import wraps
 import jwt
 from flask import request, jsonify
-from .info_logger import global_logger
+from info_logger import global_logger
 
 # Secret key used to sign the JWT token
 SECRET_KEY = 'carly-backend'
