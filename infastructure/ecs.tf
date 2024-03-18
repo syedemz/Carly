@@ -27,7 +27,7 @@ resource "aws_security_group" "ecs_sg" {
 resource "aws_ecs_task_definition" "task_definition" {
   family                   = var.cluster_service_task_name
   network_mode             = "awsvpc"
-  memory                   = 15000
+  memory                   = 4096
   requires_compatibilities = ["FARGATE"]
 
 
@@ -40,7 +40,7 @@ resource "aws_ecs_task_definition" "task_definition" {
       name   = "flask-api-container"
       image  = var.image_id
       cpu    = 2048
-      memory = 4500
+      memory = 4096
       portMappings = [
         {
           containerPort = 8890
@@ -58,7 +58,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     }
   ])
 
-  cpu = 4096
+  cpu = "2048 "
 }
 
 
