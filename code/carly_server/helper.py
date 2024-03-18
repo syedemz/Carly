@@ -1,6 +1,6 @@
 import boto3
-from info_logger import dynamo_fetch_record, global_logger
-from authorizer import generate_token
+from .info_logger import dynamo_fetch_record, global_logger
+from .authorizer import generate_token
 
 
 dynamodb = boto3.client('dynamodb', region_name='eu-central-1')
@@ -90,6 +90,7 @@ def execute_login(email: str, password: str) -> object:
             return {"customer_id": record['customer_id']['S'], "language": record['language']['S'], "token":token}
     except KeyError as e:
         global_logger('Server Error', 'error',  f"Could not find record or record is invalid: {str(e)}")
+        return None
     return None
 
 
