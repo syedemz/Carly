@@ -16,3 +16,5 @@ All the customer info is stored into a dynamoDB table.
 The server endpoints are secured by using JWT tokens, endpoints '/changepassword' and '/changelanguage' can only be reached one you have successfully logged in, Furthermore, all the endpoints are accessible only if the provided client version number in the request headers is higher than 2.1.0.
 
 An architectural diagram has been provided for ease of understanding.
+
+The customer_importer_dynamo.py file was implemented to load the customer info provided into a dynamodb table
