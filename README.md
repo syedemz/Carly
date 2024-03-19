@@ -18,3 +18,11 @@ The server endpoints are secured by using JWT tokens, endpoints '/changepassword
 An architectural diagram has been provided for ease of understanding.
 
 The customer_importer_dynamo.py file was implemented to load the customer info provided into a dynamodb table
+
+The endpoints are as follows :
+
+/login [POST] : expects parameters email and password inside the request body in json format, expects version number minimum 2.1.0 in the request header, returns customer_id, language and token
+
+/changepassword [POST] : expects parameters customer_id, email and newpassword inside the request body in json format, expects version number minimum 2.1.0 in the request header, expects the bearer token received from after successful login in the authorization header, changes password for the customer
+
+/changepassword [POST] : expects parameters customer_id, email and language inside the request body in json format, expects version number minimum 2.1.0 in the request header, expects the bearer token received from after successful login in the authorization header, changes the language for the customer
