@@ -26,3 +26,11 @@ The endpoints are as follows :
 /changepassword [POST] : expects parameters customer_id, email and newpassword inside the request body in json format, expects version number minimum 2.1.0 in the request header, expects the bearer token received from after successful login in the authorization header, changes password for the customer
 
 /changepassword [POST] : expects parameters customer_id, email and language inside the request body in json format, expects version number minimum 2.1.0 in the request header, expects the bearer token received from after successful login in the authorization header, changes the language for the customer
+
+current endpoints:
+
+login: https://pynme5ihtc.execute-api.eu-central-1.amazonaws.com/dev/login
+
+change password: https://pynme5ihtc.execute-api.eu-central-1.amazonaws.com/dev/changepassword
+
+change language : https://pynme5ihtc.execute-api.eu-central-1.amazonaws.com/dev/changelanguage
